@@ -4,11 +4,9 @@ log_location = 'log.txt'
 
 def write(message, critcal = False):
     time = strftime("%Y-%m-%d %H:%M:%S")
-    log = '| ' + time + ' | [' + message + '] \n'
-    if critical:
-        log = '! ' + time + ' ! [' + message + '] \n'
-    f.open(log_location)
+    log = '| ' + str(time) + ' | [' + str(message) + '] \n'
+    if critcal:
+        log = '! ' + str(time) + ' ! [' + str(message) + '] \n'
+    f = open(log_location, 'a')
     f.write(log)
     f.close()
-    
-    
