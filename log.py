@@ -15,12 +15,9 @@ app_author = 'Will Cipriano'
 app_email = 'logs@wfc.help'
 email_subject = 'Logfile Error'
 
-
-
 def check_path(path):
     if not os.path.exists(path):
         os.makedirs(path)
-
 
 def check_file(path, file):
     time = strftime("%Y-%m-%d %H:%M:%S")
