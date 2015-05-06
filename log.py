@@ -57,6 +57,6 @@ def write(message, critcal = False,file = False):
         check_file(log_path, file)
         f = open(log_path + file, 'a')
 
-    #Write a close file.
+    #Write and close file.
     f.write(log)
     f.close()
