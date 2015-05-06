@@ -39,7 +39,7 @@ def system_info():
         html += "Timezone: " + timezone + "<br></center>\n"
         html += "<HR>\n"
     except Exception as ex:
-        html = '\n<br><font color="red">CRITICAL ERROR: Failed to load system information: "' + ex + '"<br>\n'
+        html = '\n<br><font color="red">CRITICAL ERROR: Failed to load system information: "' + ex + '"</font><br>\n'
     return html
 
 
