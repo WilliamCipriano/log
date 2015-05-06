@@ -54,7 +54,7 @@ def check_file(path, file):
         html = "<HEAD><TITLE>" + app_name + " log</TITLE><HEAD>\n"
         html += "<center><H2>" + app_name + " Log file</H2><br>\n"
         html += "originally created: " + time + "<br>\n"
-        html += "creator version: " + app_version + "<br>\n"
+        html += "version: " + app_version + "<br>\n"
         html += "author: " + app_author + "<br>\n"
         html += "contact: <a href='mailto:" + app_email + "?Subject=" + email_subject + "'>" + app_email + "</a></center>\n\n"
         html += "<hr>"
