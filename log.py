@@ -1,6 +1,8 @@
 from time import gmtime, strftime
 import os
 
+#You will find a fully updated version of this script at https://github.com/WilliamCipriano/log
+
 #find local path, should still work if py2exe is used.
 path = os.path.dirname(__file__).replace('\\library.zip','')
 
@@ -9,11 +11,11 @@ log_default = 'log.html'
 log_path = path + '\logs\\'
 
 #Program details (these are just placed at the start of the log file, might help with version tracking etc)
-app_name = 'Undefined Program'
-app_version = '0.0.0'
+app_name = 'OpenDental-Patient-Reminder'
+app_version = '0.0.1 Alpha'
 app_author = 'Will Cipriano'
 app_email = 'logs@wfc.help'
-email_subject = 'Logfile Error'
+email_subject = 'OpenDental-Patient-Reminder Error (Please Include All Logs)'
 
 #attempt to grab system info, might be useful in debuging if user only sends you the log file. This is designed to fail softly to allow logging to continue.
 #side note: ship your program without any logs inside of the log file dir so it will be populated by this information.
@@ -85,6 +87,6 @@ def write(message, critcal = False,file = False):
         check_file(log_path, file)
         f = open(log_path + file, 'a')
 
-    #Write and close file.
+    #Write a close file.
     f.write(log)
     f.close()
