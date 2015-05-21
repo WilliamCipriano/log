@@ -101,15 +101,15 @@ def email_alert(to = app_email, file = False, critcal = False):
     #Check file then open it, using location defined by function call if defined.
     if file == False:
         check_file(log_path, log_default)
-        f = open(log_path + log_default, 'a')
+        f = open(log_path + log_default, 'r')
     else:
         check_file(log_path, file)
-        f = open(log_path + file, 'a')
+        f = open(log_path + file, 'r')
 
     #Send the mail already!
     import mail
     
     if critcal:
-        mail.email(to, f.read(), 'ALERT:' + app_name + ' log ' + time)
+        mail.email_alert(to, f.read(), 'ALERT:' + app_name + ' log ' + time)
     else:
-        mail.email(to, f.read(), app_name + ' log ' + time)
+        mail.email_alert(to, f.read(), app_name + ' log ' + time)
