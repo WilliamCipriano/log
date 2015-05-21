@@ -90,14 +90,14 @@ def write(message, critcal = False,file = False):
     #Write a close file.
     f.write(log)
     f.close()
-    
 
-def email_alert(to, file = False, critcal = False):
+
+def email_alert(to = app_email, file = False, critcal = False):
     #email a log file to a email address
-    
+
     #Get current time/date.
     time = strftime("%Y-%m-%d %H:%M:%S")
-    
+
     #Check file then open it, using location defined by function call if defined.
     if file == False:
         check_file(log_path, log_default)
@@ -105,8 +105,10 @@ def email_alert(to, file = False, critcal = False):
     else:
         check_file(log_path, file)
         f = open(log_path + file, 'a')
-    
+
+    #Send the mail already!
     import mail
+    
     if critcal:
         mail.email(to, f.read(), 'ALERT:' + app_name + ' log ' + time)
     else:
